@@ -16,17 +16,17 @@ func main() {
 	list.Insert(1, "insert VALUE2")
 	list.Insert(1, "insert VALUE3")
 	//链表遍历
-	list.Travel(func(node *singlylinkedlist.Node) {
+	list.Traversal(func(node *singlylinkedlist.Node) {
 		fmt.Printf("%p-%v\n", node, node.Data)
 	})
 	//链表反转
 	list.Reverse()
 
 	fmt.Println(list)
-	list.Travel(nil)
+	list.Traversal(nil)
 
 	list.Remove(5)
-	list.Travel(nil)
+	list.Traversal(nil)
 
 	// fmt.Println(list.Head)
 }

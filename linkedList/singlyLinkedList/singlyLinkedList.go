@@ -125,7 +125,7 @@ func (l *List) Remove(pos int32) (err error) {
 }
 
 //Travel 链表遍历
-func (l *List) Travel(callback func(node *Node)) {
+func (l *List) Traversal(callback func(node *Node)) {
 	fmt.Printf("链表遍历 长度:%v\n", l.Length)
 	node := l.Head
 	for node.Next != nil {
