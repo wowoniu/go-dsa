@@ -71,8 +71,8 @@ func (l *List) Insert(pos int32, value interface{}) (err error) {
 	return
 }
 
-//Append 在链表中追加节点
-func (l *List) Append(pos int32, value interface{}) (err error) {
+//AppendBy 在链表制定位置中追加节点
+func (l *List) AppendBy(pos int32, value interface{}) (err error) {
 	posNode, err := l.GetNode(pos)
 	if err != nil {
 		return
@@ -95,6 +95,11 @@ func (l *List) Append(pos int32, value interface{}) (err error) {
 
 	return
 
+}
+
+//Append 在链表尾部追加
+func (l *List) Append(value interface{}) (err error) {
+	return l.AppendBy(l.Length-1, value)
 }
 
 //Remove 移除节点
