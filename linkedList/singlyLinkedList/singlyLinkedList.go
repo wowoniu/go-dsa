@@ -109,12 +109,15 @@ func (l *List) Remove(pos int32) (err error) {
 		return
 	}
 	//遍历获取前驱节点
-	node := l.Head
 	var prevNode *Node
-	for node.Next != posNode {
-		node = node.Next
+	// node := l.Head
+	// for node.Next != posNode {
+	// 	node = node.Next
+	// }
+	// prevNode = node
+	if prevNode, err = l.GetNode(pos - 1); err != nil {
+		return
 	}
-	prevNode = node
 	//后继节点
 	prevNode.Next = posNode.Next
 	l.Length = l.Length - 1
